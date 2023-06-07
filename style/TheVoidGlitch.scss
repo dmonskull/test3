@@ -1,0 +1,48 @@
+@mixin visualTune($l, $shad-width, $shad-color) {
+  left: $l;
+  text-shadow: $shad-width 0 $shad-color;
+}
+
+.the-void-title {
+  position: relative;
+
+  &:before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include visualTune(-3px, 3px, red);
+    animation: noise-1 2s infinite linear alternate;
+  }
+
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include visualTune(3px, 3px, blue);
+    animation: noise-2 2s infinite linear alternate;
+  }
+}
+
+@keyframes noise-1 {
+  $seq-count: 20;
+  @for $i from 0 through $seq-count {
+    #{percentage($i * (1/$seq-count))} {
+      clip-path: inset(
+        percentage(random(100) / 100) 0 percentage(random(100) / 100) 0
+      );
+    }
+  }
+}
+
+@keyframes noise-2 {
+  $seq-count: 20;
+  @for $i from 0 through $seq-count {
+    #{percentage($i * (1/$seq-count))} {
+      clip-path: inset(
+        percentage(random(100) / 100) 0 percentage(random(100) / 100) 0
+      );
+    }
+  }
+}

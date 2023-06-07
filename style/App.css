@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 1em;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(158, 156, 156);
+}
+
+h1 {
+  font-size: 5em;
+}
+
+.section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.with-p {
+  max-width: 30vw;
+  overflow: hidden;
+}
+
+.with-p p {
+  font-size: 1.4em;
+}
+
+.section-content {
+  margin: 0 0 0 15vw;
+  padding: 50px 0;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.section-two-column {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 15vw;
+}
+
+.section-void {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.section-void p {
+  overflow: hidden;
+}
+
+/* 
+---
+Skills 
+---
+*/
+
+/* For wide screens */
+.skill-icons-wide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 80px);
+  justify-content: space-between;
+  max-width: 40vw;
+  column-gap: 30px;
+  row-gap: 15px;
+}
+
+/* For mobile (tall screens) */
+.skill-icons-tall {
+  display: none;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding-top: 25px;
+  min-width: 100%;
+  max-width: 70vw;
+  grid-template-columns: repeat(auto-fit, 60px);
+  justify-content: space-between;
+}
+
+.skill-icon-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.skill-icons-wide .skill-icon-group {
+  width: 80px;
+}
+
+.skill-icons-tall .skill-icon-group {
+  width: 60px;
+}
+
+.skill-icons-tall .skill-icon-group .skill-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.skill-icons-wide .skill-icon-group .skill-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.skill-icon {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.skill-icon-filler {
+  width: 80px;
+}
+
+/* 
+---
+Projects
+---
+*/
+
+.project-cards-wide {
+  display: grid;
+  flex-grow: 1;
+  max-width: 30vw;
+  row-gap: 20px;
+}
+
+/* For mobile (tall screens) */
+.project-cards-tall {
+  display: none;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding-top: 25px;
+  min-width: 100%;
+  max-width: 70vw;
+  grid-template-columns: repeat(auto-fit, 100%);
+}
+
+@media only screen and (max-width: 1050px) {
+  h1 {
+    font-size: 3.5em;
+  }
+
+  .section {
+    justify-content: center;
+  }
+
+  .with-p {
+    max-width: 100%;
+  }
+
+  .section-content {
+    margin: 0;
+    width: 80%;
+  }
+
+  .skill-icons-tall {
+    display: grid;
+  }
+
+  .skill-icons-wide {
+    display: none;
+  }
+
+  .project-cards-wide {
+    display: none;
+  }
+
+  .project-cards-tall {
+    display: grid;
+  }
+}
+
+@media (max-device-width: 640px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  .with-p p {
+    font-size: 1.2em;
+  }
+}
